@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tales on a Plate</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .hero {
+      height: 100vh;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .hero .left img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .hero .right {
+      padding-left: 30px;
+    }
+    .hero h1 {
+      color: #d2691e;
+      font-size: 3rem;
+    }
+    .tagline {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #555;
+    }
+    .description {
+      font-size: 1.1rem;
+      margin-top: 15px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .custom-btn {
+      border: 2px solid #d2691e;
+      color: #d2691e;
+      background-color: transparent;
+      font-weight: bold;
+      padding: 10px 24px;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .custom-btn:hover,
+    .custom-btn:focus,
+    .custom-btn:active {
+      background-color: #d2691e;
+      color: #fff;
+      border-color: #d2691e;
+      text-decoration: none;
+    }
+
+    .features-section {
+      background-color: #f1f1f1;
+      padding: 40px 0;
+    }
+
+    .feature-btn {
+      width: 100%;
+      padding: 15px;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-btn:hover {
+      background-color: #d2691e;
+      color: #fff;
+      border-color: #d2691e;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero container">
+    <div class="row align-items-center">
+      <!-- Image Section -->
+      <div class="col-md-6 left mb-4 mb-md-0">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Recipe Story" />
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-md-6 right">
+        <h1>Tales on a Plate</h1>
+        <p class="tagline">Where every flavor tells a story</p>
+        <p class="description">
+          At Tales on a Plate, we believe that every dish has a hidden story — a moment, a memory, or a legacy passed down through generations.
+          Our recipes bring together the warmth of home and the magic of tradition, serving more than just food, but a slice of history with every bite.
+          Join us in savoring the flavors that tell the stories of love, family, and unforgettable moments.
+        </p>
+        <!-- Buttons -->
+        <div class="btn-custom">
+            <a href="/register" class="btn custom-btn me-3">Register</a>
+            <a href="/login" class="btn custom-btn">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-section container">
+    <h2 class="text-center mb-5">Features</h2>
+    <div class="row">
+      <!-- Add Recipe Card -->
+      <div class="col-md-4 mb-4">
+        <div class="feature-card">
+          <h3>Add Recipe</h3>
+          <p>Create and share your favorite recipes with the world.</p>
+          <a href="/register" class="btn feature-btn btn-outline-primary">Add Recipe</a>
+        </div>
+      </div>
+
+      <!-- Update Recipe Card -->
+      <div class="col-md-4 mb-4">
+        <div class="feature-card">
+          <h3>Update Recipe</h3>
+          <p>Edit and update your existing recipes anytime.</p>
+          <a href="/register" class="btn feature-btn btn-outline-warning">Update Recipe</a>
+        </div>
+      </div>
+
+      <!-- Delete Recipe Card -->
+      <div class="col-md-4 mb-4">
+        <div class="feature-card">
+          <h3>Delete Recipe</h3>
+          <p>Remove recipes that are no longer needed or valid.</p>
+          <a href="/register" class="btn feature-btn btn-outline-danger">Delete Recipe</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

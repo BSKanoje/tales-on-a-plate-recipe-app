@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block start %}
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="row g-0">
+      <div class="col-md-4 text-center p-4">
+        {% if user.profile.profile_picture %}
+          <img src="{{ user.profile.profile_picture.url }}" class="img-fluid rounded-circle" style="max-width: 200px;" alt="Profile Picture">
+        {% else %}
+          <img src="{% static 'default_profile.png' %}" class="img-fluid rounded-circle" style="max-width: 200px;" alt="Default Profile">
+        {% endif %}
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">{{ user.username }}</h3>
+          <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+          <p class="card-text"><strong>Location:</strong> {{ user.profile.location|default:"Not specified" }}</p>
+          <p class="card-text"><strong>Bio:</strong><br>{{ user.profile.bio|default:"No bio provided." }}</p>
+          <a href="{% url 'update_profile' %}" class="btn btn-warning mt-3">Update Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

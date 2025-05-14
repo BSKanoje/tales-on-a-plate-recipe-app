@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block start %}
+<div class="container mt-5">
+  <div class="card shadow">
+    {% if recipe.image %}
+    <img src="{{ recipe.image.url }}" class="card-img-top" alt="{{ recipe.title }}" style="max-height: 400px; width: 100%; object-fit: contain; background-color: #f8f9fa;">
+    {% endif %}
+    <div class="card-body">
+      <div class="d-flex align-items-center mb-3">
+        {% if recipe.author.profile.profile_picture %}
+          <img src="{{ recipe.author.profile.profile_picture.url }}" 
+              alt="{{ recipe.author.username }}" 
+              class="rounded-circle me-3" 
+              style="width: 50px; height: 50px; object-fit: cover;">
+        {% else %}
+          <img src="{% static 'default.jpg' %}" 
+              alt="Default Profile" 
+              class="rounded-circle me-3" 
+              style="width: 50px; height: 50px; object-fit: cover;">
+        {% endif %}
+        <div>
+          <h5 class="mb-0">{{ recipe.author.get_full_name|default:recipe.author.username }}</h5>
+          {% if recipe.author.profile.location %}
+          <small class="text-muted">{{ recipe.author.profile.location }}</small>
+          {% endif %}
+        </div>
+      </div>
+
+      <h2 class="card-title">{{ recipe.title }}</h2>
+      <p><strong>Description:</strong> {{ recipe.description }}</p>
+      <p><strong>Ingredients:</strong><br>{{ recipe.ingredients|linebreaksbr }}</p>
+      <p><strong>Instructions:</strong><br>{{ recipe.instructions|linebreaksbr }}</p>
+      <p><strong>Cooking Time:</strong> {{ recipe.cooking_time }} minutes</p>
+      <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+      <p><strong>Story Behind the Recipe:</strong><br>{{ recipe.story|default:"—" }}</p>
+      <div class="mt-4">
+        <a href="/home" class="btn btn-secondary">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

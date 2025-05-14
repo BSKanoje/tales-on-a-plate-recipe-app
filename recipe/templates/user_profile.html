@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block start %}
+<body>
+    <div class="container mt-5">
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Update Profile</h2>
+            <hr>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Bio</label>
+              <input name="bio" required type="text" class="form-control" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Profile Picture</label>
+                <input name="profile_picture" required type="file" class="form-control" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Location</label>
+                <input name="location" required type="text" class="form-control" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Password</label>
+                <input name="password" required type="password" class="form-control" >
+            </div>
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+        </form>
+    </div>
+</body>
+
+{% endblock %}
+
+user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    bio = models.TextField(blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
+    location 
